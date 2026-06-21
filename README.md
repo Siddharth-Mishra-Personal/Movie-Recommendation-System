@@ -31,3 +31,28 @@ With thousands of movies available on streaming platforms, discovering content c
 ---
 
 ## 📂 Project Architecture & Methodology
+
+[Raw Movie Data] ➔ [Feature Engineering: Tag Merging] ➔ [Text Vectorization] ➔ [Cosine Similarity Matrix] ➔ [Top-N Recommendations Engine]
+
+
+1. **Data Ingestion**: Loading movie attributes including titles, overviews, genres, cast lineups, and technical credits.
+2. **Text Cleaning & Preprocessing**: 
+   * Stripping spaces from entity strings (e.g., transforming `"Johnny Depp"` into `"JohnnyDepp"` so the vectorizer reads it as a unique singular token).
+   * Combining descriptive attributes into an aggregated text block per film.
+3. **Feature Matrix Construction**: Transforming text blocks into a frequency count array using a bag-of-words model.
+4. **Distance Evaluation**: Constructing an $N \times N$ cosine similarity matrix mapping how closely aligned every movie is to every other entry in the database.
+5. **Ranking Execution**: Fetching the target index for a user-input film, sorting similarity values in descending order, and extracting the top matches.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure your system has Python 3.8 or higher installed.
+
+### Installation & Execution Guide
+
+1. **Clone the repository:**
+```bash
+   git clone [https://github.com/Siddharth-Mishra-Personal/Movie-Recommendation-System.git](https://github.com/Siddharth-Mishra-Personal/Movie-Recommendation-System.git)
+   cd Movie-Recommendation-System
